@@ -17,6 +17,8 @@
     <PackageReference Include="Azure.Identity" Version="1.12.0" />
     <PackageReference Include="Azure.Monitor.Ingestion" Version="1.1.2" />
     <PackageReference Include="System.Management.Automation" Version="7.4.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.PowerShell.Commands.Utility" Version="7.4.0"
+      PrivateAssets="All" />
     <Content Include="$(AssemblyName).psd1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

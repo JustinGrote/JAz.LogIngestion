@@ -5,12 +5,13 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": ".NET Core Attach",
-			"type": "coreclr",
-			"request": "attach",
-			"logging": {
-				"moduleLoad": false
-			}
-		}
+			"name": "PowerShell: Binary Module Interactive",
+			"type": "PowerShell",
+			"request": "launch",
+			"script": "Get-Item Source/Client.PowerShell/bin/Debug/net*/publish/JAz.LogIngestion.psd1 | Import-Module",
+			"createTemporaryIntegratedConsole": true,
+			"attachDotnetDebugger": true,
+			"preLaunchTask": "dotnet publish"
+		},
 	]
 }

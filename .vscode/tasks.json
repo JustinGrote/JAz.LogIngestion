@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "dotnet publish",
+			"type": "shell",
+			"command": "dotnet publish -c Debug",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"icon": {
+				"color": "terminal.ansiGreen",
+				"id": "combine"
+			}
+		}
+	]
+}
