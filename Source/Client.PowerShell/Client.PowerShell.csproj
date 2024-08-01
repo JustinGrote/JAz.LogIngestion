@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Target Name="DisplayMessages">
+    <Message Text="Project File Name = $(MSBuildProjectFile)" />
+    <Message Text="Project Extension = $(MSBuildProjectExtension)" />
+  </Target>
+  <PropertyGroup>
+    <AssemblyName>JAz.LogIngestion</AssemblyName>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <SelfContained>false</SelfContained>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.12.0" />
+    <PackageReference Include="Azure.Monitor.Ingestion" Version="1.1.2" />
+    <PackageReference Include="System.Management.Automation" Version="7.4.0" PrivateAssets="All" />
+    <Content Include="$(AssemblyName).psd1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <!-- Disable PDB generation for the Release build -->
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <PublishDir>../../Release</PublishDir>
+  </PropertyGroup>
+
+  <!-- These assemblies get included even tho SMA is marked PrivateAssets, so we can exclude them -->
+  <Target Name="DeleteDuplicateAssemblies" AfterTargets="Publish">
+    <ItemGroup>
+      <FilesToDelete Include="$(PublishDir)/Microsoft.Bcl.AsyncInterfaces.dll" />
+      <FilesToDelete Include="$(PublishDir)/System.Security.Cryptography.ProtectedData.dll" />
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)" />
+  </Target>
+</Project>
