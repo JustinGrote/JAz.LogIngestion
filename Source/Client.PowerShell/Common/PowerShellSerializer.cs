@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using static System.Text.Encoding;
+
 using Azure.Core.Serialization;
 
 using static Microsoft.PowerShell.Commands.JsonObject;

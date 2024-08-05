@@ -1,7 +1,7 @@
 namespace JAz.LogIngestion;
+
 using System.Diagnostics.CodeAnalysis;
 using System.Management.Automation;
-using System.Net;
 
 using Azure.Monitor.Ingestion;
 
@@ -19,6 +19,9 @@ public class SendLog : CancellablePSCmdlet
 	[NotNull]
 	[Parameter(Mandatory = true, ValueFromPipeline = true)]
 	public object? InputObject { get; set; }
+
+	[Parameter]
+	public SwitchParameter PassThru { get; set; }
 
 	readonly List<object> _logs = [];
 
@@ -52,6 +55,10 @@ public class SendLog : CancellablePSCmdlet
 		};
 
 		using var debugLogger = this.CreateAzureDebugLogger();
-		Context.Client.Upload(RuleId, StreamName, _logs, uploadOptions, PipelineStopToken);
+		Azure.Response response = Context.Client.Upload(RuleId, StreamName, _logs, uploadOptions, PipelineStopToken);
+		if (PassThru.IsPresent)
+		{
+			WriteObject(response);
+		}
 	}
 }
