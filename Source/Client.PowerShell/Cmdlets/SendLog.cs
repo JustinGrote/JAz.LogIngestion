@@ -60,8 +60,8 @@ public class SendLog : CancellablePSCmdlet
 		// UseConsumingEnumerable can minimize memory usage by making logs streaming via the cmdlet, however there is
 		// a bug in the Azure SDK that causes the first item to be dropped with an assert, leading a single item submission
 		// to cause a NullReferenceException.
-		// When that bug is fixed we will rely on the newer
-		// library, always use a consuming enumerable, and remove this hack.
+		// We work around this by sending a dummy item for the logs to consume.
+		// If the above is fixed, this should be removed. It won't hurt anything as this dummy submitted log will just be silently dropped.
 		logs.Add("This item will be consumed by the AssertNotNullOrEmpty in UploadAsync. If you see it, it is a bug");
 
 		//This ensures the upload occurs on a separate thread so as not to block our cmdlet ProcessRecord ingestion
