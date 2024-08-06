@@ -25,13 +25,6 @@ public class NewLogIngestionClient : CancellablePSCmdlet
 	[Parameter]
 	public SwitchParameter PassThru { get; set; }
 
-	readonly AzureDebugLogCollector azureDebugLogCollector;
-
-	public NewLogIngestionClient()
-	{
-		azureDebugLogCollector = new AzureDebugLogCollector(this);
-	}
-
 	protected override void EndProcessing()
 	{
 		DefaultAzureCredentialOptions options = new()
