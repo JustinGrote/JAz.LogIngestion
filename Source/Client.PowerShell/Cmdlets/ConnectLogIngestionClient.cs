@@ -6,12 +6,10 @@ using Azure.Monitor.Ingestion;
 using System.Diagnostics.Tracing;
 using System.Diagnostics.CodeAnalysis;
 using Azure.Core;
-using System.Text.RegularExpressions;
 using System.Reflection.Metadata;
 using static System.Management.Automation.ErrorCategory;
-using System.CodeDom;
 
-[Cmdlet(VerbsCommunications.Connect, $"JAzLogIngestionClient", DefaultParameterSetName = "Default")]
+[Cmdlet(VerbsCommunications.Connect, $"{Settings.Prefix}LogIngestionClient", DefaultParameterSetName = "Default")]
 [OutputType(typeof(LogsIngestionClient))]
 public class NewLogIngestionClient : CancellablePSCmdlet
 {
@@ -23,14 +21,22 @@ public class NewLogIngestionClient : CancellablePSCmdlet
 	[Parameter(ParameterSetName = "ClientSecret", Mandatory = true)]
 	public PSCredential? Credential { get; set; }
 
+	[NotNull]
 	[Parameter(ParameterSetName = "ClientSecret", Mandatory = true)]
-	public Guid TenantId { get; set; }
+	public string? TenantId { get; set; }
 
 	[Parameter]
 	public SwitchParameter PassThru { get; set; }
 
 	[Parameter]
-	public SwitchParameter NoVerify { get; set; }
+	public SwitchParameter Verify { get; set; }
+
+	readonly AzureDebugLogCollector azureDebugLogCollector;
+
+	public NewLogIngestionClient()
+	{
+		azureDebugLogCollector = new AzureDebugLogCollector(this);
+	}
 
 	protected override void EndProcessing()
 	{
@@ -38,7 +44,8 @@ public class NewLogIngestionClient : CancellablePSCmdlet
 		{
 			ExcludeInteractiveBrowserCredential = false,
 			Diagnostics = {
-				IsAccountIdentifierLoggingEnabled = true
+				IsAccountIdentifierLoggingEnabled = true,
+				IsLoggingContentEnabled = true,
 			}
 		};
 
@@ -60,7 +67,7 @@ public class NewLogIngestionClient : CancellablePSCmdlet
 				ExcludeInteractiveBrowserCredential = false
 			});
 
-		if (NoVerify.IsPresent is false)
+		if (Verify.IsPresent)
 		{
 			string? selectedCredential = ParameterSetName == "ClientSecret"
 				? "ClientSecretCredential"
@@ -69,16 +76,19 @@ public class NewLogIngestionClient : CancellablePSCmdlet
 			using AzureEventSourceListener credentialFinder = new(
 				(eventData, message) =>
 				{
-					Regex selectedCredentialRegex = new("DefaultAzureCredential credential selected: (?<credential>.+)");
-					if (selectedCredentialRegex.IsMatch(message))
+					const int DEFAULT_AZURE_CREDENTIAL_SELECTED = 13;
+					if (eventData.EventSource.Name == "Azure.Identity"
+						&& eventData.EventId == DEFAULT_AZURE_CREDENTIAL_SELECTED
+						&& eventData.Payload?[0] is string payload
+					)
 					{
-						selectedCredential = selectedCredentialRegex.Match(message).Groups["credential"].Value;
+						selectedCredential = payload;
 					}
 				},
-				level: EventLevel.Informational
+				level: EventLevel.Verbose
 			);
 
-			using var listener = this.CreateAzureDebugLogger();
+			using var listener = azureDebugLogCollector.CreateAzureDebugLogger();
 
 			// Test the credentials are valid
 			var token = credential.GetToken(new(["https://monitor.azure.com/.default"]), PipelineStopToken);
@@ -93,12 +103,13 @@ public class NewLogIngestionClient : CancellablePSCmdlet
 				));
 			}
 
+			azureDebugLogCollector.WriteCollectedDebugLogs();
 			WriteVerbose($"Authenticated to monitor.azure.com using: {selectedCredential}");
-
-
 		}
 
-		Context.Client = new(new Uri(Endpoint), credential);
+		LogsIngestionClientOptions clientOptions = new() { };
+
+		Context.Client = new(new Uri(Endpoint), credential, clientOptions);
 
 		if (PassThru.IsPresent is true)
 		{

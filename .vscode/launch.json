@@ -5,6 +5,12 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": ".NET Core Attach",
+			"type": "coreclr",
+			"request": "attach",
+			"justMyCode": false
+		},
+		{
 			"name": "PowerShell: Binary Module Interactive",
 			"type": "PowerShell",
 			"request": "launch",
@@ -13,5 +19,6 @@
 			"attachDotnetDebugger": true,
 			"preLaunchTask": "dotnet publish"
 		},
+
 	]
 }

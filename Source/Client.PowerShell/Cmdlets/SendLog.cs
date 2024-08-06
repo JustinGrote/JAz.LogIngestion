@@ -1,11 +1,14 @@
 namespace JAz.LogIngestion;
 
+using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
 using System.Management.Automation;
 
+using Azure;
+using Azure.Core.Diagnostics;
 using Azure.Monitor.Ingestion;
 
-[Cmdlet(VerbsCommunications.Send, $"JAzLog")]
+[Cmdlet(VerbsCommunications.Send, $"{Settings.Prefix}Log")]
 public class SendLog : CancellablePSCmdlet
 {
 	[NotNull]
@@ -18,24 +21,23 @@ public class SendLog : CancellablePSCmdlet
 
 	[NotNull]
 	[Parameter(Mandatory = true, ValueFromPipeline = true)]
-	public object? InputObject { get; set; }
+	public PSObject? InputObject { get; set; }
 
 	[Parameter]
 	public SwitchParameter PassThru { get; set; }
 
-	readonly List<object> _logs = [];
+	readonly BlockingCollection<object> logs = new(1000);
+	readonly AzureDebugLogCollector azureDebugLogCollector;
+
+	Task<Response>? logTask { get; set; }
+
+
+	public SendLog()
+	{
+		azureDebugLogCollector = new AzureDebugLogCollector(this);
+	}
 
 	protected override void BeginProcessing()
-	{
-		_logs.Clear();
-	}
-
-	protected override void ProcessRecord()
-	{
-		_logs.Add(InputObject);
-	}
-
-	protected override void EndProcessing()
 	{
 		if (Context.Client is null)
 		{
@@ -51,14 +53,67 @@ public class SendLog : CancellablePSCmdlet
 
 		LogsUploadOptions uploadOptions = new()
 		{
-			Serializer = new PowerShellJsonSerializer()
+			Serializer = new PowerShellJsonSerializer(PipelineStopToken)
 		};
 
-		using var debugLogger = this.CreateAzureDebugLogger();
-		Azure.Response response = Context.Client.Upload(RuleId, StreamName, _logs, uploadOptions, PipelineStopToken);
-		if (PassThru.IsPresent)
+		// BUG: https://github.com/Azure/azure-sdk-for-net/issues/45361
+		// UseConsumingEnumerable can minimize memory usage by making logs streaming via the cmdlet, however there is
+		// a bug in the Azure SDK that causes the first item to be dropped with an assert, leading a single item submission
+		// to cause a NullReferenceException.
+		// When that bug is fixed we will rely on the newer
+		// library, always use a consuming enumerable, and remove this hack.
+		logs.Add("This item will be consumed by the AssertNotNullOrEmpty in UploadAsync. If you see it, it is a bug");
+
+		//This ensures the upload occurs on a separate thread so as not to block our cmdlet ProcessRecord ingestion
+		logTask = Task.Run(
+			async () =>
+			{
+				// This reports the ingestion client logs so that we can marshall them to the PowerShell debug stream
+				using AzureEventSourceListener clientLogger = azureDebugLogCollector.CreateAzureDebugLogger();
+
+				return await Context.Client.UploadAsync(
+					RuleId,
+					StreamName,
+					logs.GetConsumingEnumerable(),
+					uploadOptions,
+					PipelineStopToken
+				).ConfigureAwait(false);
+			}
+		);
+	}
+
+	protected override void ProcessRecord()
+	{
+		// Feeds the ingestion client and should keep the operation streaming
+		// And the memory usage low but still allow batching to occur.
+		WriteDebug("Adding log to queue");
+		logs.Add(InputObject);
+
+		azureDebugLogCollector.WriteCollectedDebugLogs();
+	}
+
+	protected override void EndProcessing()
+	{
+		WriteDebug("Finished processing Logs");
+		logs.CompleteAdding();
+
+		// This should not be null as it should have been started in BeginProcessing
+		ArgumentNullException.ThrowIfNull(logTask);
+
+		azureDebugLogCollector.WriteCollectedDebugLogs();
+		Response? response = logTask?.GetAwaiter().GetResult();
+		if (response is not null && PassThru.IsPresent)
 		{
 			WriteObject(response);
 		}
+
+		azureDebugLogCollector.WriteCollectedDebugLogs();
+	}
+
+	protected override void StopProcessing()
+	{
+		logs.CompleteAdding();
+		logs.Dispose();
+		azureDebugLogCollector.WriteCollectedDebugLogs();
 	}
 }
