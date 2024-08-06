@@ -98,10 +98,10 @@
             # Tags = @()
 
             # A URL to the license for this module.
-            # LicenseUri = ''
+            LicenseUri = 'https://github.com/JustinGrote/JAz.LogIngestion/blob/main/LICENSE.MD'
 
             # A URL to the main website for this project.
-            # ProjectUri = ''
+            ProjectUri = 'https://github.com/JustinGrote/JAz.LogIngestion'
 
             # A URL to an icon representing this module.
             # IconUri = ''

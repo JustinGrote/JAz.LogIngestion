@@ -8,12 +8,12 @@ schema: 2.0.0
 # Send-JAzLog
 
 ## SYNOPSIS
-Sends one or more logs to the Azure Log Ingestion Service. Will automatically batch logs for ingestion if provided via the pipeline or as an array.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
 ```
-Send-JAzLog -RuleId <String> -StreamName <String> -InputObject <Object> [-PassThru]
+Send-JAzLog -RuleId <String> -StreamName <String> -InputObject <PSObject> [-PassThru]
  [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
@@ -32,10 +32,10 @@ PS C:\> {{ Add example code here }}
 ## PARAMETERS
 
 ### -InputObject
-An object representation of the log to submit. It will be converted via the PowerShell JSON serialization for submission.
+{{ Fill InputObject Description }}
 
 ```yaml
-Type: Object
+Type: PSObject
 Parameter Sets: (All)
 Aliases:
 
@@ -47,7 +47,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Return the last result response.
+{{ Fill PassThru Description }}
 
 ```yaml
 Type: SwitchParameter
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -RuleId
-Specify the ImmutableId of the Data Collection Rule, found in the JSON view of its properties
+{{ Fill RuleId Description }}
 
 ```yaml
 Type: String
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -StreamName
-Specify the name of the stream where the logs will be ingested. The format of the submitted objects must match the schema of the stream or they will be sliently dropped.
+{{ Fill StreamName Description }}
 
 ```yaml
 Type: String
@@ -91,12 +91,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.Object
+### System.Management.Automation.PSObject
 
 ## OUTPUTS
 

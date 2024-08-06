@@ -1,0 +1,672 @@
+﻿License notice for Azure.Identity (v1.12.0)
+------------------------------------
+
+https://github.com/Azure/azure-sdk-for-net at 75fb76b92b160a9b4566ec0f2956ba1da1101b23
+
+https://github.com/Azure/azure-sdk-for-net/blob/Azure.Identity_1.12.0/sdk/identity/Azure.Identity/README.md
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Azure.Monitor.Ingestion (v1.1.2)
+------------------------------------
+
+https://github.com/Azure/azure-sdk-for-net at 767dcb4fa7f5a2b8410352c1279c19097f1d5d1f
+
+https://github.com/Azure/azure-sdk-for-net/blob/Azure.Monitor.Ingestion_1.1.2/sdk/monitor/Azure.Monitor.Ingestion/README.md
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.PowerShell.Commands.Utility (v7.4.0)
+------------------------------------
+
+https://github.com/PowerShell/PowerShell
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Management.Automation (v7.4.0)
+------------------------------------
+
+https://github.com/PowerShell/PowerShell
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Azure.Core (v1.40.0)
+------------------------------------
+
+https://github.com/Azure/azure-sdk-for-net at 242d8afc16f3a4b18e7ecb8381049d61f7099242
+
+https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.40.0/sdk/core/Azure.Core/README.md
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for JetBrains.Annotations (v2021.2.0)
+------------------------------------
+
+https://www.jetbrains.com/help/resharper/Code_Analysis__Code_Annotations.html
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Json.More.Net (v1.9.0)
+------------------------------------
+
+https://github.com/gregsdennis/json-everything at ff10b206fe99cdc03eadd00b7ce87871494576a5
+
+Available at https://aka.ms/deprecateLicenseUrl
+
+LICENSE
+
+
+License notice for JsonPointer.Net (v3.0.3)
+------------------------------------
+
+https://github.com/gregsdennis/json-everything at 27e320a9fbd3119bd1046ab7063b0cad4c746045
+
+Available at https://aka.ms/deprecateLicenseUrl
+
+LICENSE
+
+
+License notice for JsonSchema.Net (v5.2.6)
+------------------------------------
+
+https://github.com/gregsdennis/json-everything
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Markdig.Signed (v0.33.0)
+------------------------------------
+
+https://github.com/xoofx/markdig at 7d40bc118bc28095f01699d3d1759ae5a1c18b80
+
+https://github.com/lunet-io/markdig
+
+Alexandre Mutel
+
+Licensed under BSD-2-Clause
+
+Available at https://licenses.nuget.org/BSD-2-Clause
+
+
+License notice for Microsoft.ApplicationInsights (v2.21.0)
+------------------------------------
+
+https://github.com/Microsoft/ApplicationInsights-dotnet at 5e2e7ddda961ec0e16a75b1ae0a37f6a13c777f5
+
+https://go.microsoft.com/fwlink/?LinkId=392727
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Bcl.AsyncInterfaces (v1.1.1)
+------------------------------------
+
+https://github.com/dotnet/corefx
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.CodeAnalysis.Common (v4.8.0-2.final)
+------------------------------------
+
+https://github.com/dotnet/roslyn at 44555193fd1135b5d53a2099f76fec91e0d1ebde
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.CodeAnalysis.CSharp (v4.8.0-2.final)
+------------------------------------
+
+https://github.com/dotnet/roslyn at 44555193fd1135b5d53a2099f76fec91e0d1ebde
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Identity.Client (v4.61.3)
+------------------------------------
+
+https://github.com/AzureAD/microsoft-authentication-library-for-dotnet at 88df64013795d4e3716e1f677600f8164ffdb542
+
+https://go.microsoft.com/fwlink/?linkid=844761
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Identity.Client.Extensions.Msal (v4.61.3)
+------------------------------------
+
+https://github.com/AzureAD/microsoft-authentication-library-for-dotnet at 88df64013795d4e3716e1f677600f8164ffdb542
+
+https://go.microsoft.com/fwlink/?linkid=844761
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.IdentityModel.Abstractions (v6.35.0)
+------------------------------------
+
+https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet at c94c7fc235501d478221e979062bd8837a55575b
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Management.Infrastructure (v3.0.0)
+------------------------------------
+
+https://github.com/PowerShell/MMI
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Management.Infrastructure.Runtime.Unix (v3.0.0)
+------------------------------------
+
+https://github.com/PowerShell/MMI
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Management.Infrastructure.Runtime.Win (v3.0.0)
+------------------------------------
+
+https://github.com/PowerShell/MMI
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Available at https://aka.ms/deprecateLicenseUrl
+
+LICENSE.txt
+
+
+License notice for Microsoft.PowerShell.CoreCLR.Eventing (v7.4.0)
+------------------------------------
+
+https://github.com/PowerShell/PowerShell
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.PowerShell.MarkdownRender (v7.2.1)
+------------------------------------
+
+https://github.com/PowerShell/MarkdownRender
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.PowerShell.Native (v7.4.0)
+------------------------------------
+
+https://github.com/PowerShell/PowerShell-Native
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Security.Extensions (v1.2.0)
+------------------------------------
+
+https://aka.ms/getfilesiginforedist
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Win32.Registry.AccessControl (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Microsoft.Win32.SystemEvents (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for Newtonsoft.Json (v13.0.3)
+------------------------------------
+
+https://github.com/JamesNK/Newtonsoft.Json at 0a2e291c0d9c0c7675d445703e51750363a549ef
+
+https://www.newtonsoft.com/json
+
+Copyright © James Newton-King 2008
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.ClientModel (v1.0.0)
+------------------------------------
+
+https://github.com/Azure/azure-sdk-for-net at 8ffa7d7f26bb2c5e3dadf74b2aa9c9ba9c9d9208
+
+https://github.com/Azure/azure-sdk-for-net/blob/System.ClientModel_1.0.0/sdk/core/System.ClientModel/README.md
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.CodeDom (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Collections.Immutable (v7.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at d099f075e45d2aa6007a22b71b45a08758559f80
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Configuration.ConfigurationManager (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Diagnostics.DiagnosticSource (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Diagnostics.EventLog (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.DirectoryServices (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Drawing.Common (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/winforms at e4ede9b8979b9d2b1b1d4383f30a791414f0625b
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Formats.Asn1 (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Management (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Memory (v4.5.4)
+------------------------------------
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
+
+
+License notice for System.Memory.Data (v1.0.2)
+------------------------------------
+
+https://github.com/Azure/azure-sdk-for-net at 7e3cf643977591e9041f4c628fd4d28237398e0b
+
+https://github.com/Azure/azure-sdk-for-net/blob/System.Memory.Data_1.0.2/sdk/core/System.Memory.Data/README.md
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Numerics.Vectors (v4.5.0)
+------------------------------------
+
+https://dot.net/
+
+Copyright © Microsoft Corporation.  All rights reserved.
+
+License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
+
+
+License notice for System.Reflection.Metadata (v7.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at d099f075e45d2aa6007a22b71b45a08758559f80
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Runtime.CompilerServices.Unsafe (v6.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 4822e3c3aa77eb82b2fb33c9321f923cf11ddde6
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Security.AccessControl (v6.0.2-mauipre.1.22102.15)
+------------------------------------
+
+https://github.com/dotnet/runtime at 3da69c23c1f8f502ec2eb1d44ff2fe7522210282
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Security.Cryptography.Pkcs (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Security.Cryptography.ProtectedData (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Security.Permissions (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Text.Encoding.CodePages (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Text.Encodings.Web (v6.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 4822e3c3aa77eb82b2fb33c9321f923cf11ddde6
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Text.Json (v6.0.2)
+------------------------------------
+
+https://github.com/dotnet/runtime at 839cdfb0ecca5e0be3dbccd926e7651ef50fdf10
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Threading.AccessControl (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+
+License notice for System.Threading.Tasks.Extensions (v4.5.4)
+------------------------------------
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+License available at https://github.com/dotnet/corefx/blob/master/LICENSE.TXT
+
+
+License notice for System.Windows.Extensions (v8.0.0)
+------------------------------------
+
+https://github.com/dotnet/runtime at 5535e31a712343a63f5d7d796cd874e563e5ac14
+
+https://dot.net/
+
+Copyright © Microsoft Corporation. All rights reserved.
+
+Licensed under MIT
+
+Available at https://licenses.nuget.org/MIT
+
+

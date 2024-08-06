@@ -5,16 +5,23 @@ online version:
 schema: 2.0.0
 ---
 
-# Send-JAzLog
+# Connect-JAzLogIngestionClient
 
 ## SYNOPSIS
-Sends one or more logs to the Azure Log Ingestion Service. Will automatically batch logs for ingestion if provided via the pipeline or as an array.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
+### Default (Default)
 ```
-Send-JAzLog -RuleId <String> -StreamName <String> -InputObject <Object> [-PassThru]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Connect-JAzLogIngestionClient -Endpoint <String> [-PassThru] [-Verify] [-ProgressAction <ActionPreference>]
+ [<CommonParameters>]
+```
+
+### ClientSecret
+```
+Connect-JAzLogIngestionClient -Endpoint <String> -Credential <PSCredential> -TenantId <String> [-PassThru]
+ [-Verify] [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,23 +38,38 @@ PS C:\> {{ Add example code here }}
 
 ## PARAMETERS
 
-### -InputObject
-An object representation of the log to submit. It will be converted via the PowerShell JSON serialization for submission.
+### -Credential
+{{ Fill Credential Description }}
 
 ```yaml
-Type: Object
+Type: PSCredential
+Parameter Sets: ClientSecret
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Endpoint
+{{ Fill Endpoint Description }}
+
+```yaml
+Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PassThru
-Return the last result response.
+{{ Fill PassThru Description }}
 
 ```yaml
 Type: SwitchParameter
@@ -61,12 +83,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RuleId
-Specify the ImmutableId of the Data Collection Rule, found in the JSON view of its properties
+### -TenantId
+{{ Fill TenantId Description }}
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: ClientSecret
 Aliases:
 
 Required: True
@@ -76,15 +98,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StreamName
-Specify the name of the stream where the logs will be ingested. The format of the submitted objects must match the schema of the stream or they will be sliently dropped.
+### -Verify
+{{ Fill Verify Description }}
 
 ```yaml
-Type: String
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -96,11 +133,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Object
+### None
 
 ## OUTPUTS
 
-### System.Object
+### Azure.Monitor.Ingestion.LogsIngestionClient
+
 ## NOTES
 
 ## RELATED LINKS
