@@ -25,7 +25,7 @@ Connect-JAzLogIngestionClient -Endpoint <String> -Credential <PSCredential> -Ten
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Configures the module to submit logs to a log ingestion workspace.
 
 ## EXAMPLES
 

@@ -33,7 +33,7 @@
     Description       = 'A PowerShell Wrapper for the Azure Log Analytics Ingestion API'
 
     # Minimum version of the PowerShell engine required by this module
-    # PowerShellVersion = ''
+    PowerShellVersion = '7.4'
 
     # Name of the PowerShell host required by this module
     # PowerShellHostName = ''
@@ -72,7 +72,7 @@
     FunctionsToExport = '*'
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-    CmdletsToExport   = '*'
+    CmdletsToExport   = 'Connect-JAzLogIngestionClient','Send-JAzLog'
 
     # Variables to export from this module
     VariablesToExport = '*'
