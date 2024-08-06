@@ -26,11 +26,13 @@ public class SendLog : CancellablePSCmdlet
 	[Parameter]
 	public SwitchParameter PassThru { get; set; }
 
+	[Parameter]
+	public LogsIngestionClient? Client { get; set; } = Context.Client;
+
 	readonly BlockingCollection<object> logs = new(1000);
 	readonly AzureDebugLogCollector azureDebugLogCollector;
 
 	Task<Response>? logTask { get; set; }
-
 
 	public SendLog()
 	{
@@ -39,11 +41,11 @@ public class SendLog : CancellablePSCmdlet
 
 	protected override void BeginProcessing()
 	{
-		if (Context.Client is null)
+		if (Client is null)
 		{
 			ThrowTerminatingError(
 				new ErrorRecord(
-					new InvalidOperationException("You must first connect with Connect-JAzLogIngestionClient"),
+					new InvalidOperationException("You must first connect with Connect-JAzLogIngestionClient or provide a client via -Client parameter"),
 					"ClientNotConnected",
 					ErrorCategory.InvalidOperation,
 					null
@@ -71,7 +73,7 @@ public class SendLog : CancellablePSCmdlet
 				// This reports the ingestion client logs so that we can marshall them to the PowerShell debug stream
 				using AzureEventSourceListener clientLogger = azureDebugLogCollector.CreateAzureDebugLogger();
 
-				return await Context.Client.UploadAsync(
+				return await Client.UploadAsync(
 					RuleId,
 					StreamName,
 					logs.GetConsumingEnumerable(),
