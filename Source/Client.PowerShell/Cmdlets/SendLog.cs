@@ -88,7 +88,6 @@ public class SendLog : CancellablePSCmdlet
 	{
 		// Feeds the ingestion client and should keep the operation streaming
 		// And the memory usage low but still allow batching to occur.
-		WriteDebug("Adding log to queue");
 		logs.Add(InputObject);
 
 		azureDebugLogCollector.WriteCollectedDebugLogs();
@@ -96,7 +95,6 @@ public class SendLog : CancellablePSCmdlet
 
 	protected override void EndProcessing()
 	{
-		WriteDebug("Finished processing Logs");
 		logs.CompleteAdding();
 
 		// This should not be null as it should have been started in BeginProcessing
